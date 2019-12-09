@@ -19,24 +19,55 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="202" id="P4S-VJ-vQV" customClass="LaunchTableViewCell" customModule="SpacexLauchesApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="202"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LaunchTableViewCell" rowHeight="80" id="P4S-VJ-vQV" customClass="LaunchTableViewCell" customModule="SpacexLauchesApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P4S-VJ-vQV" id="moI-Mf-cw0">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="202"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flight Number :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3v-ev-EPA">
-                                                    <rect key="frame" x="20" y="34" width="128" height="35"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Number : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzv-4c-57j">
+                                                    <rect key="frame" x="20" y="16" width="122" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission Name : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rh5-Sc-3F2">
+                                                    <rect key="frame" x="20" y="42" width="121" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGs-j4-dm6">
+                                                    <rect key="frame" x="147" y="16" width="8" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Falcon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uht-rD-oaR">
+                                                    <rect key="frame" x="147" y="42" width="51.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Uht-rD-oaR" secondAttribute="trailing" constant="5" id="1VO-pb-MBG"/>
+                                                <constraint firstItem="Uht-rD-oaR" firstAttribute="centerY" secondItem="Rh5-Sc-3F2" secondAttribute="centerY" id="8Fj-To-Hl9"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jGs-j4-dm6" secondAttribute="trailing" constant="5" id="95O-Lc-ept"/>
+                                                <constraint firstItem="Uht-rD-oaR" firstAttribute="leading" secondItem="Rh5-Sc-3F2" secondAttribute="trailing" constant="6" id="9ye-VC-xbf"/>
+                                                <constraint firstItem="wzv-4c-57j" firstAttribute="leading" secondItem="moI-Mf-cw0" secondAttribute="leading" constant="20" id="NtW-ou-XNL"/>
+                                                <constraint firstItem="wzv-4c-57j" firstAttribute="top" secondItem="moI-Mf-cw0" secondAttribute="top" constant="16" id="Rgt-eR-Rg7"/>
+                                                <constraint firstAttribute="bottom" secondItem="Rh5-Sc-3F2" secondAttribute="bottom" constant="17" id="bFm-rL-o5k"/>
+                                                <constraint firstItem="jGs-j4-dm6" firstAttribute="centerY" secondItem="wzv-4c-57j" secondAttribute="centerY" id="coy-4c-WHU"/>
+                                                <constraint firstItem="Rh5-Sc-3F2" firstAttribute="top" secondItem="wzv-4c-57j" secondAttribute="bottom" constant="5" id="m33-TZ-L8t"/>
+                                                <constraint firstItem="Rh5-Sc-3F2" firstAttribute="leading" secondItem="moI-Mf-cw0" secondAttribute="leading" constant="20" id="osB-es-dXs"/>
+                                                <constraint firstItem="jGs-j4-dm6" firstAttribute="leading" secondItem="wzv-4c-57j" secondAttribute="trailing" constant="5" id="zaW-py-Iam"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="flightNumber" destination="d3v-ev-EPA" id="rjs-KH-j6h"/>
+                                            <outlet property="flightNumberLabel" destination="jGs-j4-dm6" id="6gO-wA-wJa"/>
+                                            <outlet property="missionNameLabel" destination="Uht-rD-oaR" id="YZt-Dt-iFf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

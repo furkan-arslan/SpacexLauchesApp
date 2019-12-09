@@ -10,7 +10,9 @@ import UIKit
 
 class LaunchTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var flightNumber: UILabel!
+    @IBOutlet weak var flightNumberLabel: UILabel!
+    @IBOutlet weak var missionNameLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

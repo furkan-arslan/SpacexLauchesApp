@@ -1,7 +1,7 @@
 import Foundation
 
-struct LaunchData: Decodable {
-    let flightNumber: String!
+struct LaunchData: Codable {
+    let flightNumber: Int!
     let rocket: LaunchingRocket!
     let mission_name: String!
     let launch_year: String!
@@ -9,7 +9,7 @@ struct LaunchData: Decodable {
     let links: Links!
     let details: String?
 
-    private enum LaunchItems: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case flightNumber = "flight_number"
         case rocket = "rocket"
         case mission_name = "mission_name"
@@ -20,23 +20,24 @@ struct LaunchData: Decodable {
     }
 }
 
-struct LaunchingRocket: Decodable {
+
+struct LaunchingRocket: Codable {
     let rocket_id: String?
     let rocket_name: String?
     let rocket_type: String?
 
-    private enum LaunchingRocketItems: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case rocket_id = "rocket_id"
         case rocket_name = "rocket_name"
         case rocket_type = "rocket_type"
     }
 }
 
-struct Links: Decodable {
+struct Links: Codable {
     let mission_patch: String?
     let mission_patch_small: String?
 
-    private enum LinkItems: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case mission_patch = "mission_patch"
         case mission_patch_small = "mission_patch_small"
     }

@@ -18,11 +18,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.tableView.delegate = self
-        //self.tableView.dataSource = self
+        
+        configureTableView()
         getJsonData()
     }
     
+    private func configureTableView(){
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
     
     func getJsonData()
     {
@@ -75,9 +79,17 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LaunchTableViewCell
-        cell.flightNumber.text = elementList[indexPath.row].flightNumber
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LaunchTableViewCell", for: indexPath) as? LaunchTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.flightNumberLabel.text = String(describing: elementList[indexPath.row].flightNumber!)
+        cell.missionNameLabel.text = String(describing: elementList[indexPath.row].mission_name!)
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
